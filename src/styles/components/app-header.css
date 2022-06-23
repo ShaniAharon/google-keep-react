@@ -1,0 +1,14 @@
+.main-header {
+  /* padding-bottom: 1.5rem; */
+  padding: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.svg-burger{
+  height: 30px;
+  cursor: pointer;
+  margin: 0 1em;
+}
+
