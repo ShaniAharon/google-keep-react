@@ -19,17 +19,13 @@ export const WikiTubeApp = () => {
   return (
     <section className="map-app-container container  container-clean">
       <div>
+        <div className="input-content-container"></div>
+      </div>
+      <div>
         <VideoList />
       </div>
-      <div className="video-container">
-        <iframe
-          width="490"
-          height="315"
-          title="youtube-video"
-          src={`https://www.youtube.com/embed/${videoId}`}
-        ></iframe>
-        <WikiPreview />
-      </div>
+
+      <WikiPreview />
       <Modal />
     </section>
   )
