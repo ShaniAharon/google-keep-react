@@ -36,7 +36,7 @@ export const AppHeader = () => {
         </h1>
       </div>
       <div className="search-container">
-        <form action="" className="flex">
+        <form action="" className="header-form flex">
           <button className="btn-search">
             <svg
               className="search-icon"

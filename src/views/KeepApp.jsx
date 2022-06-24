@@ -4,7 +4,7 @@ import {eventBus} from '../services/eventBusService'
 import {noteService} from '../services/note.service.js'
 
 export const KeepApp = () => {
-  const [txt, setText] = useState('')
+  const [txt, setTxt] = useState('')
   const [note, setNote] = useState(null)
 
   useEffect(() => {
@@ -25,11 +25,12 @@ export const KeepApp = () => {
 
   const handleChange = ({target}) => {
     console.log('target.value', target.value)
-    setText(target.value)
+    setTxt(target.value)
   }
 
   const handleClick = () => {
     setNote((prevNote) => ({...prevNote, txt}))
+    setTxt('')
   }
 
   return (

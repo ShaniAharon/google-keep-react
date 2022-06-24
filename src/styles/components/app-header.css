@@ -72,7 +72,7 @@
   min-width: 232px;
 }
 
-form{
+.header-form{
   background: rgba(255,255,255,1);
   border: 1px solid transparent;
   -webkit-box-shadow: 0 1px 1px 0 rgba(65,69,73,.3),0 1px 3px 1px rgba(65,69,73,.15);

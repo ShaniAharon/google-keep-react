@@ -19,7 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<KeepApp />}></Route>
       </Routes>
-      <AppFooter />
+      {/* <AppFooter /> */}
     </section>
   )
 }

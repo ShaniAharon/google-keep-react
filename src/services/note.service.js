@@ -9,6 +9,7 @@ export const noteService = {
     createNote,
     saveNote,
     removeNote,
+    updateNote,
     clearHistory
 }
 
@@ -20,6 +21,13 @@ async function saveNote(note) {
     console.log('note', note);
     return storageService.post(STORAGE_KEY, note)
 }
+
+async function updateNote(note) {
+    console.log('note update', note);
+    return storageService.put(STORAGE_KEY, note)
+}
+
+
 
 async function removeNote(noteId) {
     return storageService.remove(STORAGE_KEY, noteId)
