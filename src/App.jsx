@@ -1,7 +1,7 @@
 import {Routes, Route} from 'react-router-dom'
 import {AppHeader} from './cmps/AppHeader'
 import {AppFooter} from './cmps/AppFooter'
-import {WikiTubeApp} from './views/WikiTubeApp.jsx'
+import {KeepApp} from './views/KeepApp.jsx'
 import {useEffect} from 'react'
 import {eventBus} from './services/eventBusService'
 
@@ -17,7 +17,7 @@ function App() {
     <section className=" ">
       <AppHeader />
       <Routes>
-        <Route path="/" element={<WikiTubeApp />}></Route>
+        <Route path="/" element={<KeepApp />}></Route>
       </Routes>
       <AppFooter />
     </section>

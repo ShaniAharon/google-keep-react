@@ -1,22 +1,22 @@
 import React, {useEffect, useState} from 'react'
 import {eventBus} from '../services/eventBusService'
-import {termService} from '../services/term.service'
+import {noteService} from '../services/note.service'
 
 export const AppFooter = () => {
   const [terms, setTerms] = useState(null)
 
-  useEffect(() => {
-    loadTerms()
-  }, [terms])
+  // useEffect(() => {
+  //   loadTerms()
+  // }, [terms])
 
-  const loadTerms = async () => {
-    const terms = await termService.getTerms()
-    setTerms(terms)
-  }
+  // const loadTerms = async () => {
+  //   const terms = await noteService.getTerms()
+  //   setTerms(terms)
+  // }
 
   const handleClick = () => {
     //show modal use promise to wait for use response then clear it
-    termService.clearHistory()
+    noteService.clearHistory()
   }
 
   return (

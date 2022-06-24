@@ -3,7 +3,7 @@ import {useForm} from '../hooks/useForm'
 import {eventBus} from '../services/eventBusService'
 import {youtubeService} from '../services/youtube.service'
 import {wikiService} from '../services/wiki.service'
-import {termService} from '../services/term.service'
+import {noteService} from '../services/note.service'
 
 export const AppHeader = () => {
   //TODO: try the ragular two way binding here
@@ -14,7 +14,7 @@ export const AppHeader = () => {
     const wikiData = await wikiService.getWikiData(search)
     eventBus.emit('videos', res)
     eventBus.emit('wikis', wikiData)
-    termService.saveTerm(search)
+    noteService.saveTerm(search)
     setSearch('')
   }
 

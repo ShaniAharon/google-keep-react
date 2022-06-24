@@ -13,6 +13,32 @@
   margin-right: 10px;
 } */
 
+.content-edit{
+  width: 200px;
+  height: 40px;
+  background-color: rgb(211, 196, 225);
+}
+
+.input-content-container{
+  -webkit-box-shadow: 0 3px 5px rgb(0 0 0 / 20%);
+    box-shadow: 0 3px 5px rgba(0,0,0,.20);
+    background-color: #fff;
+    border-color: #e0e0e0;
+    /* more */
+    border: 1px solid transparent;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-transition-duration: 0.218s;
+    transition-duration: 0.218s;
+    -webkit-transition-property: background,border,opacity,-webkit-box-shadow,-webkit-transform;
+    transition-property: background,border,opacity,box-shadow,transform;
+    -webkit-transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+}
 
 
 .btn-clip{
@@ -28,3 +54,95 @@
   margin-bottom:5px ;
   width: 388px;
 }
+
+/*parent div*/
+/* color: #202124;
+direction: ltr;
+font-family: "Roboto",arial,sans-serif;
+font-size: 15px;
+margin: 32px auto 16px auto;
+position: relative;
+width: 600px; */
+
+/* contenteditable */
+/* color: #202124;
+direction: ltr;
+font-family: "Roboto",arial,sans-serif;
+font-size: 15px;
+box-sizing: border-box;
+opacity: 1;
+position: relative;
+border-radius: 8px;
+transition-duration: 0.218s;
+transition-property: opacity;
+box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302),0 2px 6px 2px rgba(60,64,67,0.149);
+width: 600px; */
+
+
+/*
+    color: #202124;
+    direction: ltr;
+    font-family: "Roboto",arial,sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    outline: none!important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8ZGVmcz4KICAgICAgICA8cGF0aCBkPSJNMTIsMiBDMTcuNTIsMiAyMiw2LjQ4IDIyLDEyIEMyMiwxNy41MiAxNy41MiwyMiAxMiwyMiBDNi40OCwyMiAyLDE3LjUyIDIsMTIgQzIsNi40OCA2LjQ4LDIgMTIsMiBaIE0xMCwxNC4yIEw3LjQsMTEuNiBMNiwxMyBMMTAsMTcgTDE4LDkgTDE2LjYsNy42IEwxMCwxNC4yIFoiIGlkPSJwYXRoLTEiPjwvcGF0aD4KICAgIDwvZGVmcz4KICAgIDxnIGlkPSJjaGVja19jaXJjbGVfMjRweCIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBvbHlnb24gaWQ9ImJvdW5kcyIgcG9pbnRzPSIwIDAgMjQgMCAyNCAyNCAwIDI0Ij48L3BvbHlnb24+CiAgICAgICAgPG1hc2sgaWQ9Im1hc2stMiIgZmlsbD0id2hpdGUiPgogICAgICAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNwYXRoLTEiPjwvdXNlPgogICAgICAgIDwvbWFzaz4KICAgICAgICA8dXNlIGlkPSJNYXNrIiBmaWxsPSIjMDAwMDAwIiBmaWxsLXJ1bGU9Im5vbnplcm8iIHhsaW5rOmhyZWY9IiNwYXRoLTEiPjwvdXNlPgogICAgPC9nPgo8L3N2Zz4K);
+    background-size: 24px 24px;
+    border: none;
+    border-radius: 50%;
+    height: 20px;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    transform: translate(-7px,-7px);
+    transition: background-color 0.218s linear,opacity 0.218s linear,transform 0.218s linear;
+    width: 20px;
+    z-index: 201;
+    background-color: #fff;
+    display: none;
+    user-select: none;
+    */
+
+    /*
+        color: #202124;
+    direction: ltr;
+    font-family: "Roboto",arial,sans-serif;
+    font-size: 15px;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+    transition-duration: 0.218s;
+    transition-property: background,border,opacity,box-shadow,transform;
+    transition-timing-function: ease-in;
+    background-color: #fff;
+    border-color: #e0e0e0;
+    height: 46px!important;
+    */
+
+    /* color: #202124;
+    direction: ltr;
+    font-family: "Roboto",arial,sans-serif;
+    font-size: 15px;
+    overflow: hidden;
+    position: relative;
+    transition: max-height 0.218s ease-in;
+    min-height: 60px;
+    max-height: 600px;
+    overflow-y: auto; */
+
+
+    /*
+    main container
+    color: #202124;
+    direction: ltr;
+    font-family: "Roboto",arial,sans-serif;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    clear: both;
+    position: relative; */
