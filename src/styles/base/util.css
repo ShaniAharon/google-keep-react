@@ -501,6 +501,11 @@ img {
   color: var(--teal-500);
 }
 
+.clr-yellow{
+  color: var(--yellow-400);
+  /* #fbbc04 */
+}
+
 /** responsive **/
 @media (min-width: 576px) {
   html {

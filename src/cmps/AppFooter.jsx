@@ -23,7 +23,7 @@ export const AppFooter = () => {
     <footer className="main-footer">
       <div className="logo">
         <h2>
-          <span className="clr-teal">Wiki</span>Tube
+          <span className="clr-yellow">Go</span>Keep
         </h2>
       </div>
       <div className="search-container">

@@ -32,7 +32,7 @@ export const AppHeader = () => {
           ></path>
         </svg>
         <h1>
-          <span className="clr-teal">Go</span>Notes
+          <span className="clr-yellow">Go</span>Keep
         </h1>
       </div>
       <div className="search-container">
