@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react"
 
+//costum hook useEffect that run only for update
 export const useEffectUpdate = (cb, dependencies) => {
     const isMounting = useRef(true)
 
@@ -9,7 +10,7 @@ export const useEffectUpdate = (cb, dependencies) => {
             return
         }
         cb()
-        
+
         // eslint-disable-next-line
     }, dependencies)
 }

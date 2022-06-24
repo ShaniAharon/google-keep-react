@@ -13,6 +13,41 @@
   margin-right: 10px;
 } */
 
+.outer-container{
+  /* color: #202124;
+  direction: ltr;
+  font-family: "Roboto",arial,sans-serif;
+  font-size: 15px;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  border-radius: 8px;
+  transition-duration: 0.218s;
+  transition-timing-function: ease-in;
+  background-color: #fff;
+  border-color: #e0e0e0;
+  height: 46px!important; */
+}
+.txt-input{
+    width: 100%;
+    border: none;
+    direction: ltr;
+    -webkit-user-modify: read-write;
+    outline: none;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: #202124;
+    min-height: 46px;
+    padding: 4px 16px 12px 16px;
+    letter-spacing: .01428571em;
+    font-family: Roboto,Arial,sans-serif;
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    padding-top: 12px;
+}
+
 .content-edit{
   width: 200px;
   height: 40px;
@@ -20,8 +55,10 @@
 }
 
 .input-content-container{
-  -webkit-box-shadow: 0 3px 5px rgb(0 0 0 / 20%);
-    box-shadow: 0 3px 5px rgba(0,0,0,.20);
+  box-shadow: -2px 2px 6px 1px rgb(0 0 0 / 20%);
+    background-color: #fff;
+  /* -webkit-box-shadow: 0 3px 5px rgb(0 0 0 / 20%);
+    box-shadow: 0 3px 5px rgba(0,0,0,.20); */
     background-color: #fff;
     border-color: #e0e0e0;
     /* more */
@@ -38,7 +75,34 @@
     transition-property: background,border,opacity,box-shadow,transform;
     -webkit-transition-timing-function: ease-in;
     transition-timing-function: ease-in;
+    width: 600px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    /* opacity: 1; */
 }
+
+/*
+shadow 
+box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+
+div styles
+    color: #202124;
+    direction: ltr;
+    font-family: "Roboto",arial,sans-serif;
+    font-size: 15px;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+    transition-duration: 0.218s;
+    transition-property: background,border,opacity,box-shadow,transform;
+    transition-timing-function: ease-in;
+    background-color: #fff;
+    border-color: #e0e0e0;
+    height: 46px!important;
+    */
 
 
 .btn-clip{

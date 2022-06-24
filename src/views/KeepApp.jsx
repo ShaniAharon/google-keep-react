@@ -35,7 +35,7 @@ export const KeepApp = () => {
 
   return (
     <section className="map-app-container container  container-clean">
-      <div>
+      <div className="outer-container">
         <div className="input-content-container">
           {/* <div
             contentEditable="true"
@@ -47,7 +47,14 @@ export const KeepApp = () => {
             spellCheck="false"
             value={txt}
           ></div> */}
-          <input type="text" onChange={handleChange} value={txt} name="txt" />
+          <input
+            type="text"
+            className="txt-input"
+            placeholder="Take a note…"
+            onChange={handleChange}
+            value={txt}
+            name="txt"
+          />
           <button onClick={handleClick}>Create</button>
         </div>
         <p>{txt}</p>

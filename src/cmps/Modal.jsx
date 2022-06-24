@@ -7,6 +7,7 @@ export const Modal = ({note}) => {
   const [isShow, setShow] = useState(false)
   const [myNote, setMyNote] = useState(null)
 
+  //part 2 25:18, can help
   useEffect(() => {
     const unsubscribeModal = eventBus.on('open', (isOpen) => {
       setShow(isOpen)
