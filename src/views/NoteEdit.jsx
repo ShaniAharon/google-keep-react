@@ -15,6 +15,7 @@ export const NoteEdit = () => {
 
   useEffect(() => {
     loadNote()
+    // eslint-disable-next-line
   }, [])
 
   const loadNote = async () => {
@@ -23,30 +24,41 @@ export const NoteEdit = () => {
     setNote(note)
   }
 
-  const onSaveNote = async (ev) => {
-    ev.preventDefault()
+  const onSaveNote = async () => {
     dispatch(saveNote(note))
+    navigate('/')
+  }
+
+  const goBack = (ev) => {
+    ev.preventDefault()
+    navigate('/')
   }
 
   if (!note) return <div>Loading...</div>
   return (
     <section className="note-edit">
       <pre>{JSON.stringify(note)}</pre>
-      <form onSubmit={onSaveNote} className="form">
-        <div className="form-control">
-          <label htmlFor="txt" className="form-label">
-            TEXT
-          </label>
+      <div className="outer-container">
+        <div className="input-content-container">
           <input
+            type="text"
+            className="txt-input"
+            placeholder="Take a note…"
             onChange={handleChange}
             value={note.txt}
-            className="form-input"
-            type="text"
             name="txt"
             id="txt"
           />
         </div>
-      </form>
+      </div>
+      <div className="btn-group">
+        <button onClick={onSaveNote} className="btn btn-success">
+          save
+        </button>
+        <button onClick={(ev) => goBack(ev)} className="btn btn-danger-text">
+          cancel
+        </button>
+      </div>
     </section>
   )
 }
