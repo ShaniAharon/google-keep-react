@@ -11,7 +11,8 @@ export const noteService = {
     save,
     clearHistory,
     getById,
-    getEmptyNoteItems
+    getEmptyNoteItems,
+    getEmptyNoteImg
 }
 
 async function query() {
@@ -57,6 +58,15 @@ function getEmptyNoteItems() {
     return {
         type: 'items',
         items: [],
+        txt: '',
+        color: '#ffffff'
+    }
+}
+
+function getEmptyNoteImg() {
+    return {
+        type: 'img',
+        imgUrl: '',
         txt: '',
         color: '#ffffff'
     }

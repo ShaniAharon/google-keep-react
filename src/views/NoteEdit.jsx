@@ -4,6 +4,7 @@ import {noteService} from '../services/note.service'
 import {useNavigate, useParams} from 'react-router-dom'
 import {useDispatch} from 'react-redux'
 import {saveNote} from '../store/actions/noteActions'
+import {ImgUpload} from '../cmps/ImgUpload'
 
 export const NoteEdit = () => {
   const [note, handleChange, setNote] = useForm(null)
@@ -43,6 +44,14 @@ export const NoteEdit = () => {
   const changeToItemsList = () => {
     setNote(noteService.getEmptyNoteItems())
   }
+  const changeToImg = () => {
+    setNote(noteService.getEmptyNoteImg())
+  }
+
+  const handleImg = (imgUrl) => {
+    console.log('imgUrl in note edit', imgUrl)
+    setNote((prevNote) => ({...prevNote, imgUrl}))
+  }
 
   const renderSwitch = (type) => {
     switch (type) {
@@ -71,6 +80,8 @@ export const NoteEdit = () => {
             <button onClick={enterItems}>Enter items</button>
           </>
         )
+      case 'img':
+        return <ImgUpload handleImg={handleImg} />
       default:
         return <h1>No type</h1>
     }
@@ -93,9 +104,9 @@ export const NoteEdit = () => {
               name="txt"
             /> */}
           <button onClick={changeToItemsList}>list</button>
+          <button onClick={changeToImg}>img</button>
         </div>
       </div>
-
       <input
         type="color"
         className="color-input"

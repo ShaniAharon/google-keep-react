@@ -16,6 +16,7 @@ export const NotePreview = ({handleClick, onRemoveNote, note}) => {
           ))}
         </ul>
       )}
+      {note?.imgUrl && <img src={note.imgUrl} alt="img" />}
       <button
         onClick={(ev) => {
           ev.stopPropagation()
