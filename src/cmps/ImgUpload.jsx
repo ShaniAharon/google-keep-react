@@ -9,7 +9,6 @@ export const ImgUpload = ({handleImg}) => {
 
   const onUploadImg = async (file) => {
     const res = await uploadImg(file)
-    console.log('res.url', res.url)
     handleImg(res.url)
   }
 

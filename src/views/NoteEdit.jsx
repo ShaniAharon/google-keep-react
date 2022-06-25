@@ -49,7 +49,6 @@ export const NoteEdit = () => {
   }
 
   const handleImg = (imgUrl) => {
-    console.log('imgUrl in note edit', imgUrl)
     setNote((prevNote) => ({...prevNote, imgUrl}))
   }
 
