@@ -1,9 +1,10 @@
-import {Routes, Route} from 'react-router-dom'
+import {Route, Routes} from 'react-router-dom'
 import {AppHeader} from './cmps/AppHeader'
 import {AppFooter} from './cmps/AppFooter'
 import {KeepApp} from './views/KeepApp.jsx'
 import {useEffect} from 'react'
 import {eventBus} from './services/eventBusService'
+import {NoteEdit} from './views/NoteEdit'
 
 function App() {
   //TODO: use context and add toggle dark mode
@@ -17,7 +18,10 @@ function App() {
     <section className=" ">
       <AppHeader />
       <Routes>
-        <Route path="/" element={<KeepApp />}></Route>
+        <Route path="/edit" element={<NoteEdit />}>
+          <Route path=":id" element={<NoteEdit />} />
+        </Route>
+        <Route path="/" element={<KeepApp />} />
       </Routes>
       {/* <AppFooter /> */}
     </section>

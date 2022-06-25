@@ -1,34 +1,15 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import {eventBus} from '../services/eventBusService'
-import {noteService} from '../services/note.service'
 import {Modal} from './Modal'
 import {NotePreview} from './NotePreview'
 
-export const NoteList = () => {
-  const [notes, setNotes] = useState(null)
+export const NoteList = ({notes, onRemoveNote}) => {
   const [currNote, setCurrNote] = useState(null)
-
-  useEffect(() => {
-    eventBus.on('note', () => {
-      loadNotes()
-    })
-    loadNotes()
-  }, [])
-
-  const loadNotes = async () => {
-    const notes = await noteService.query()
-    setNotes(notes)
-  }
 
   const handleClick = (note) => {
     setCurrNote(note)
     eventBus.emit('note', currNote)
     eventBus.emit('open', true)
-  }
-
-  const removeNote = async (noteId) => {
-    await noteService.remove(noteId)
-    loadNotes()
   }
 
   if (!notes) return <div>Loading...</div>
@@ -38,7 +19,7 @@ export const NoteList = () => {
       <ul className="clean-list ">
         {notes.map((note) => (
           <NotePreview
-            removeNote={removeNote}
+            onRemoveNote={onRemoveNote}
             handleClick={handleClick}
             key={note._id}
             note={note}

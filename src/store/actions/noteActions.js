@@ -1,11 +1,13 @@
-import { noteService } from "../../services/noteService"
+import { noteService } from "../../services/note.service"
 
 export function loadNotes() {
     return async (dispatch, getState) => {
         try {
-            const { filterBy } = getState().noteModule
-            const notes = await noteService.query(filterBy)
-            dispatch({ type: 'SET_ROBOTS', notes })
+            // const { filterBy } = getState().noteModule
+            // const notes = await noteService.query(filterBy)
+            const notes = await noteService.query()
+            dispatch({ type: 'SET_NOTES', notes })
+            console.log('notes actions', notes);
         } catch (err) {
             console.log('err:', err)
         }
@@ -17,7 +19,22 @@ export function removeNote(noteId) {
     return async (dispatch) => {
         try {
             await noteService.remove(noteId)
-            dispatch({ type: 'REMOVE_ROBOT', noteId })
+            dispatch({ type: 'REMOVE_NOTE', noteId })
+        } catch (err) {
+            console.log('err:', err)
+        }
+    }
+}
+
+export function saveNote(note) {
+    return async (dispatch) => {
+        try {
+            await noteService.save(note)
+            if (note._id) {
+                dispatch({ type: 'UPDATE_NOTE', note })
+            } else {
+                dispatch({ type: 'ADD_NOTE', note })
+            }
         } catch (err) {
             console.log('err:', err)
         }

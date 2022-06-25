@@ -9,14 +9,15 @@ export const noteService = {
     createNote,
     remove,
     save,
-    clearHistory
+    clearHistory,
+    getById
 }
 
-// const notes = [
-//     { _id: makeId(), name: 'Greatplace', lat: 34, lng: -80 },
-// ]
-
-
+async function query() {
+    const storageNotes = await storageService.query(STORAGE_KEY)
+    if (storageNotes.length) return storageNotes
+    return storageService.postMany(STORAGE_KEY, [])
+}
 
 async function save(note) {
     if (note._id) {
@@ -29,13 +30,15 @@ async function save(note) {
 
 }
 
-
-
-
-
 async function remove(noteId) {
     return storageService.remove(STORAGE_KEY, noteId)
 }
+
+async function getById(noteId) {
+    return storageService.get(STORAGE_KEY, noteId)
+}
+
+
 
 async function clearHistory() {
     return await storageService.clear(STORAGE_KEY)
@@ -56,17 +59,5 @@ function createNote({ searchNote }) {
 
 
 
-async function query() {
-    const storageNotes = await storageService.query(STORAGE_KEY)
-    if (storageNotes.length) return storageNotes
-    console.log('example');
-    return storageService.postMany(STORAGE_KEY, [])
-    // return new Promise((resolve, reject) => {
-    //     setTimeout(() => {
-    //         resolve(notes);
-    //     }, 1000)
-    // });
-
-}
 
 
