@@ -26,6 +26,7 @@ export const NoteEdit = () => {
 
   const onSaveNote = async () => {
     dispatch(saveNote(note))
+    setNote(noteService.getEmptyNote())
     navigate('/')
   }
 
@@ -47,7 +48,6 @@ export const NoteEdit = () => {
             onChange={handleChange}
             value={note.txt}
             name="txt"
-            id="txt"
           />
         </div>
       </div>

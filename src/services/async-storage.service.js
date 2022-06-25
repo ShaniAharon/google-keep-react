@@ -6,18 +6,12 @@ export const storageService = {
     put,
     remove,
     postMany,
-    setCenter,
-    getCenter,
     clear
 }
 
-function query(entityType, delay = 100) {
+function query(entityType) {
     var entities = JSON.parse(localStorage.getItem(entityType)) || []
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(entities)
-        }, delay)
-    })
+    return Promise.resolve(entities)
 }
 
 function get(entityType, entityId) {
@@ -29,10 +23,8 @@ function post(entityType, newEntity) {
     newEntity._id = _makeId()
     return query(entityType)
         .then(entities => {
-            console.log('entities:', entities);
             entities.push(newEntity)
             _save(entityType, entities)
-            console.log('entities:', entities);
             return newEntity
         })
 }
@@ -72,15 +64,6 @@ function clear(entityType) {
             entities.splice(0, entities.length)
             _save(entityType, entities)
         })
-}
-
-//map center function
-function setCenter(entityType, centerLoc) {
-    localStorage.setItem(entityType, JSON.stringify(centerLoc))
-}
-
-function getCenter(entityType) {
-    return JSON.parse(localStorage.getItem(entityType)) || null
 }
 
 function _save(entityType, entities) {
