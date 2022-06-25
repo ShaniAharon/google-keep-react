@@ -41,6 +41,7 @@ export const NoteEdit = () => {
     navigate('/')
   }
 
+  //TODO: make it one func for change note type
   const changeToItemsList = () => {
     setNote(noteService.getEmptyNoteItems())
   }
@@ -49,8 +50,11 @@ export const NoteEdit = () => {
   }
 
   const handleImg = (imgUrl) => {
+    //TODO: can block the save button until the img url ready , or show loading
     setNote((prevNote) => ({...prevNote, imgUrl}))
   }
+
+  //TODO: add canvas note
 
   const renderSwitch = (type) => {
     switch (type) {
