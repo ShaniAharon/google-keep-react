@@ -4,8 +4,8 @@ import axios from 'axios';
 export const uploadImg = async (file) => {
   //gets the file and upload it to cloudinary
   // Defining our variables
-  const UPLOAD_PRESET = 'cajan_33'; //change it
-  const CLOUD_NAME = 'cajan33'; //change it
+  const UPLOAD_PRESET = "cajan_33";
+  const CLOUD_NAME = "cajan33";
   const UPLOAD_URL = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`;
   const FORM_DATA = new FormData();
   // Building the request body
