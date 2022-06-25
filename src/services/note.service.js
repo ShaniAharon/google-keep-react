@@ -4,12 +4,11 @@ import { storageService } from "./async-storage.service";
 const STORAGE_KEY = 'notes'
 
 export const noteService = {
-    getNotes,
+    query,
     getEmptyNote,
     createNote,
-    saveNote,
-    removeNote,
-    updateNote,
+    remove,
+    save,
     clearHistory
 }
 
@@ -17,19 +16,24 @@ export const noteService = {
 //     { _id: makeId(), name: 'Greatplace', lat: 34, lng: -80 },
 // ]
 
-async function saveNote(note) {
-    console.log('note', note);
-    return storageService.post(STORAGE_KEY, note)
+
+
+async function save(note) {
+    if (note._id) {
+        console.log('note update', note);
+        return storageService.put(STORAGE_KEY, note)
+    } else {
+        console.log('note save', note);
+        return storageService.post(STORAGE_KEY, note)
+    }
+
 }
 
-async function updateNote(note) {
-    console.log('note update', note);
-    return storageService.put(STORAGE_KEY, note)
-}
 
 
 
-async function removeNote(noteId) {
+
+async function remove(noteId) {
     return storageService.remove(STORAGE_KEY, noteId)
 }
 
@@ -52,7 +56,7 @@ function createNote({ searchNote }) {
 
 
 
-async function getNotes() {
+async function query() {
     const storageNotes = await storageService.query(STORAGE_KEY)
     if (storageNotes.length) return storageNotes
     console.log('example');

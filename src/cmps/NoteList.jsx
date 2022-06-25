@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import {eventBus} from '../services/eventBusService'
 import {noteService} from '../services/note.service'
 import {Modal} from './Modal'
+import {NotePreview} from './NotePreview'
 
 export const NoteList = () => {
   const [notes, setNotes] = useState(null)
@@ -15,7 +16,7 @@ export const NoteList = () => {
   }, [])
 
   const loadNotes = async () => {
-    const notes = await noteService.getNotes()
+    const notes = await noteService.query()
     setNotes(notes)
   }
 
@@ -26,7 +27,7 @@ export const NoteList = () => {
   }
 
   const removeNote = async (noteId) => {
-    await noteService.removeNote(noteId)
+    await noteService.remove(noteId)
     loadNotes()
   }
 
@@ -35,24 +36,13 @@ export const NoteList = () => {
     <div className="note-list">
       <h2 className="text-center u">Notes</h2>
       <ul className="clean-list ">
-        {notes.map(({_id, txt}) => (
-          <div
-            onClick={() => handleClick({_id, txt})}
-            key={_id}
-            className="note-info"
-          >
-            <h4>{txt}</h4>
-            <button
-              onClick={(ev) => {
-                ev.stopPropagation()
-                removeNote(_id)
-              }}
-            >
-              {' '}
-              Delete
-            </button>
-            {/* <img src={noteImg} alt="" /> */}
-          </div>
+        {notes.map((note) => (
+          <NotePreview
+            removeNote={removeNote}
+            handleClick={handleClick}
+            key={note._id}
+            note={note}
+          />
         ))}
       </ul>
       <Modal note={currNote} />

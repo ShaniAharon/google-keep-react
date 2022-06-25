@@ -16,10 +16,11 @@ export const KeepApp = () => {
   useEffect(() => {
     if (!note || !note.txt) return
     saveNewNote()
+    // eslint-disable-next-line
   }, [note])
 
   const saveNewNote = async () => {
-    await noteService.saveNote(note)
+    await noteService.save(note)
     eventBus.emit('note')
   }
 
