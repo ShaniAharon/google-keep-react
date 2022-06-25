@@ -2,7 +2,12 @@ import React from 'react'
 
 export const NotePreview = ({handleClick, onRemoveNote, note}) => {
   return (
-    <div onClick={() => handleClick(note)} key={note._id} className="note-info">
+    <div
+      style={{backgroundColor: note.color}}
+      onClick={() => handleClick(note)}
+      key={note._id}
+      className="note-info"
+    >
       <h4>{note.txt}</h4>
       <button
         onClick={(ev) => {

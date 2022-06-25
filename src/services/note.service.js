@@ -47,7 +47,7 @@ async function clearHistory() {
 function getEmptyNote() {
     return {
         txt: '',
-        color: ''
+        color: '#ffffff'
     }
 }
 

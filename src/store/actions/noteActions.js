@@ -11,7 +11,6 @@ export function loadNotes() {
         } catch (err) {
             console.log('err:', err)
         }
-
     }
 }
 

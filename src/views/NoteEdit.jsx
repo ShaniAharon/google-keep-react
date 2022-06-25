@@ -51,6 +51,13 @@ export const NoteEdit = () => {
           />
         </div>
       </div>
+      <input
+        type="color"
+        className="color-input"
+        onChange={handleChange}
+        value={note.color}
+        name="color"
+      />
       <div className="btn-group">
         <button onClick={onSaveNote} className="btn btn-success">
           save
