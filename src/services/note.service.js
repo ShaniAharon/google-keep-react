@@ -10,7 +10,8 @@ export const noteService = {
     remove,
     save,
     clearHistory,
-    getById
+    getById,
+    getEmptyNoteItems
 }
 
 async function query() {
@@ -46,6 +47,16 @@ async function clearHistory() {
 
 function getEmptyNote() {
     return {
+        type: 'txt',
+        txt: '',
+        color: '#ffffff'
+    }
+}
+
+function getEmptyNoteItems() {
+    return {
+        type: 'items',
+        items: [],
         txt: '',
         color: '#ffffff'
     }

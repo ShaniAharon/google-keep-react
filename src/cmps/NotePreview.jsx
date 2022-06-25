@@ -9,6 +9,13 @@ export const NotePreview = ({handleClick, onRemoveNote, note}) => {
       className="note-info"
     >
       <h4>{note.txt}</h4>
+      {note?.items && (
+        <ul>
+          {note?.items.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      )}
       <button
         onClick={(ev) => {
           ev.stopPropagation()

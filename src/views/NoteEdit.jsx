@@ -30,17 +30,24 @@ export const NoteEdit = () => {
     navigate('/')
   }
 
+  const enterItems = () => {
+    const items = [...note.txt.trim().split(' ')]
+    setNote((prevNote) => ({...prevNote, items}))
+  }
+
   const goBack = (ev) => {
     ev.preventDefault()
     navigate('/')
   }
 
-  if (!note) return <div>Loading...</div>
-  return (
-    <section className="note-edit">
-      <pre>{JSON.stringify(note)}</pre>
-      <div className="outer-container">
-        <div className="input-content-container">
+  const changeToItemsList = () => {
+    setNote(noteService.getEmptyNoteItems())
+  }
+
+  const renderSwitch = (type) => {
+    switch (type) {
+      case 'txt':
+        return (
           <input
             type="text"
             className="txt-input"
@@ -49,8 +56,46 @@ export const NoteEdit = () => {
             value={note.txt}
             name="txt"
           />
+        )
+      case 'items':
+        return (
+          <>
+            <input
+              type="text"
+              className="txt-input"
+              placeholder="Enter list items..."
+              onChange={handleChange}
+              value={note.txt}
+              name="txt"
+            />
+            <button onClick={enterItems}>Enter items</button>
+          </>
+        )
+      default:
+        return <h1>No type</h1>
+    }
+  }
+
+  if (!note) return <div>Loading...</div>
+  return (
+    <section className="note-edit">
+      <pre>{JSON.stringify(note)}</pre>
+
+      <div className="outer-container">
+        <div className="input-content-container">
+          {renderSwitch(note.type)}
+          {/* <input
+              type="text"
+              className="txt-input"
+              placeholder="Take a note…"
+              onChange={handleChange}
+              value={note.txt}
+              name="txt"
+            /> */}
+          <button onClick={changeToItemsList}>list</button>
         </div>
       </div>
+
       <input
         type="color"
         className="color-input"
