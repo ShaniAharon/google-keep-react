@@ -26,7 +26,6 @@ export const NotePreview = ({handleClick, onRemoveNote, note}) => {
         {' '}
         Delete
       </button>
-      {/* <img src={noteImg} alt="" /> */}
     </div>
   )
 }
