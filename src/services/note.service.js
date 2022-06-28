@@ -18,7 +18,7 @@ export const noteService = {
 async function query(filterBy) {
     const storageNotes = await storageService.query(STORAGE_KEY)
     let notes = storageNotes
-    if (filterBy.txt) {
+    if (filterBy?.txt) {
         const { txt } = filterBy
         notes = notes.filter(note => note.txt.includes(txt.toLowerCase()))
     }

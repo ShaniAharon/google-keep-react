@@ -5,9 +5,7 @@ export function loadNotes() {
         try {
             const { filterBy } = getState().noteModule
             const notes = await noteService.query(filterBy)
-            // const notes = await noteService.query()
             dispatch({ type: 'SET_NOTES', notes })
-            console.log('notes actions', notes);
         } catch (err) {
             console.log('err:', err)
         }
