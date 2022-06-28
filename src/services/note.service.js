@@ -18,10 +18,10 @@ export const noteService = {
 async function query(filterBy) {
     const storageNotes = await storageService.query(STORAGE_KEY)
     let notes = storageNotes
-    // if (filterBy) {
-    //     const { txt } = filterBy
-    //     notes = notes.filter(note => note.txt.toLowerCase() === txt.toLowerCase())
-    // }
+    if (filterBy.txt) {
+        const { txt } = filterBy
+        notes = notes.filter(note => note.txt.includes(txt.toLowerCase()))
+    }
     if (notes.length) return notes
     return storageService.postMany(STORAGE_KEY, [])
 }
