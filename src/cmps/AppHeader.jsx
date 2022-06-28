@@ -7,8 +7,9 @@ export const AppHeader = () => {
   const dispatch = useDispatch()
 
   const onChangeFilter = useCallback(async (filterBy) => {
-    await dispatch(setFilterBy(filterBy))
+    dispatch(setFilterBy(filterBy))
     dispatch(loadNotes())
+    // eslint-disable-next-line
   }, [])
 
   return (

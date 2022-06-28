@@ -1,6 +1,5 @@
 import {Route, Routes} from 'react-router-dom'
 import {AppHeader} from './cmps/AppHeader'
-import {AppFooter} from './cmps/AppFooter'
 import {KeepApp} from './views/KeepApp.jsx'
 import {useEffect} from 'react'
 import {eventBus} from './services/eventBusService'
