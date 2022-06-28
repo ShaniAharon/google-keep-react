@@ -15,9 +15,14 @@ export const noteService = {
     getEmptyNoteImg
 }
 
-async function query() {
+async function query(filterBy) {
     const storageNotes = await storageService.query(STORAGE_KEY)
-    if (storageNotes.length) return storageNotes
+    let notes = storageNotes
+    // if (filterBy) {
+    //     const { txt } = filterBy
+    //     notes = notes.filter(note => note.txt.toLowerCase() === txt.toLowerCase())
+    // }
+    if (notes.length) return notes
     return storageService.postMany(STORAGE_KEY, [])
 }
 
