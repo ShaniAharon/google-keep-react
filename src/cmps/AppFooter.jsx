@@ -5,15 +5,6 @@ import {noteService} from '../services/note.service'
 export const AppFooter = () => {
   const [terms, setTerms] = useState(null)
 
-  // useEffect(() => {
-  //   loadTerms()
-  // }, [terms])
-
-  // const loadTerms = async () => {
-  //   const terms = await noteService.getTerms()
-  //   setTerms(terms)
-  // }
-
   const handleClick = () => {
     //show modal use promise to wait for use response then clear it
     noteService.clearHistory()
