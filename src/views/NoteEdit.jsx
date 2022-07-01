@@ -43,6 +43,9 @@ export const NoteEdit = () => {
 
   const changeTo = (type) => {
     switch (type) {
+      case 'txt':
+        setNote(noteService.getEmptyNote())
+        break
       case 'list':
         setNote(noteService.getEmptyNoteItems())
         break
@@ -109,6 +112,7 @@ export const NoteEdit = () => {
       <div className="outer-container">
         <div className="input-content-container">
           {renderSwitch(note.type)}
+          <button onClick={() => changeTo('txt')}>text</button>
           <button onClick={() => changeTo('list')}>list</button>
           <button onClick={() => changeTo('img')}>img</button>
           <button onClick={() => changeTo('canvas')}>paint</button>
