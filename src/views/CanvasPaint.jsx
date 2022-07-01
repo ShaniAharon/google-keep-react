@@ -16,7 +16,6 @@ export const CanvasPaint = () => {
     console.log('elCanvas', elCanvas)
     ctx.current = elCanvas.current.getContext('2d')
   }, [])
-  //TODO: use ref to catch the canvas element and create logic to draw on it
   const goBack = () => {
     navigate('/')
   }
@@ -37,8 +36,7 @@ export const CanvasPaint = () => {
     ctx.current.clearRect(0, 0, elCanvas.current.width, elCanvas.current.height)
   }
 
-  //TODO: test it with working internet
-  //TODO: create new canvas note , put the data and imgUrl and save it
+  //TODO: allow to return and edit the canvas draw we have
   const getData = async () => {
     const data = elCanvas.current.toDataURL()
     const imgFile = await dataUrlToFile(data, 'test')
@@ -57,8 +55,6 @@ export const CanvasPaint = () => {
     return new File([blob], fileName, {type: 'image/png'})
   }
 
-  //TODO: get a empty canvas note ,
-  // on save put the dataurl in it also create an img and save the url
   return (
     <section>
       <div>CanvasPaint</div>
