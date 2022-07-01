@@ -41,6 +41,7 @@ export const NoteEdit = () => {
     navigate('/')
   }
 
+  //TODO: add update note logic
   const changeTo = (type) => {
     switch (type) {
       case 'txt':
@@ -54,7 +55,6 @@ export const NoteEdit = () => {
         break
       case 'canvas':
         navigate('/canvas')
-        //setNote(noteService.getEmptyNoteCanvas())
         break
       default:
         console.log('Warning: Unknown type ' + type)
@@ -65,8 +65,6 @@ export const NoteEdit = () => {
     //TODO: can block the save button until the img url ready , or show loading
     setNote((prevNote) => ({...prevNote, imgUrl}))
   }
-
-  //TODO: add canvas note
 
   const renderSwitch = (type) => {
     switch (type) {
@@ -97,8 +95,6 @@ export const NoteEdit = () => {
         )
       case 'img':
         return <ImgUpload handleImg={handleImg} />
-      // case 'canvas':
-      //   return <CanvasPaint handleImg={handleImg} />
       default:
         return <h1>No type</h1>
     }
