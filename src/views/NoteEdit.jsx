@@ -41,12 +41,21 @@ export const NoteEdit = () => {
     navigate('/')
   }
 
-  //TODO: make it one func for change note type
-  const changeToItemsList = () => {
-    setNote(noteService.getEmptyNoteItems())
-  }
-  const changeToImg = () => {
-    setNote(noteService.getEmptyNoteImg())
+  const changeTo = (type) => {
+    switch (type) {
+      case 'list':
+        setNote(noteService.getEmptyNoteItems())
+        break
+      case 'img':
+        setNote(noteService.getEmptyNoteImg())
+        break
+      case 'canvas':
+        navigate('/canvas')
+        //setNote(noteService.getEmptyNoteCanvas())
+        break
+      default:
+        console.log('Warning: Unknown type ' + type)
+    }
   }
 
   const handleImg = (imgUrl) => {
@@ -85,6 +94,8 @@ export const NoteEdit = () => {
         )
       case 'img':
         return <ImgUpload handleImg={handleImg} />
+      // case 'canvas':
+      //   return <CanvasPaint handleImg={handleImg} />
       default:
         return <h1>No type</h1>
     }
@@ -98,16 +109,9 @@ export const NoteEdit = () => {
       <div className="outer-container">
         <div className="input-content-container">
           {renderSwitch(note.type)}
-          {/* <input
-              type="text"
-              className="txt-input"
-              placeholder="Take a note…"
-              onChange={handleChange}
-              value={note.txt}
-              name="txt"
-            /> */}
-          <button onClick={changeToItemsList}>list</button>
-          <button onClick={changeToImg}>img</button>
+          <button onClick={() => changeTo('list')}>list</button>
+          <button onClick={() => changeTo('img')}>img</button>
+          <button onClick={() => changeTo('canvas')}>paint</button>
         </div>
       </div>
       <input
