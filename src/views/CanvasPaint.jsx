@@ -43,7 +43,6 @@ export const CanvasPaint = () => {
     const data = elCanvas.current.toDataURL()
     const imgFile = await dataUrlToFile(data, 'test')
     const {url: imgUrl} = await uploadImg(imgFile)
-    console.log('res', imgUrl)
     const canvasNote = noteService.getEmptyNoteCanvas()
     canvasNote.imgUrl = imgUrl
     canvasNote.dataUrl = data
