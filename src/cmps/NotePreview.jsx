@@ -20,9 +20,20 @@ export const NotePreview = ({handleClick, onRemoveNote, note}) => {
     setIsShowColor((prev) => !prev)
   }
 
-  const changeNoteColor = () => {
-    note.color = 'antiquewhite'
+  const changeNoteColor = (color) => {
+    note.color = color
     dispatch(saveNote(note))
+  }
+
+  const getColors = () => {
+    const colors = [
+      {name: 'red', color: '#e91e63'},
+      {name: 'purple', color: '#9c27b0'},
+      {name: 'blue', color: '#3f51b5'},
+      {name: 'yellow', color: '#ffeb3b'},
+      {name: 'green', color: '#4caf50'},
+    ]
+    return colors
   }
 
   return (
@@ -30,7 +41,7 @@ export const NotePreview = ({handleClick, onRemoveNote, note}) => {
       style={{backgroundColor: note.color}}
       onClick={() => handleClick(note)}
       key={note._id}
-      className="note-info pos-relative"
+      className="note-info pos-relative grid-preview"
       onMouseOver={onHover}
       onMouseOut={onOut}
     >
@@ -65,15 +76,22 @@ export const NotePreview = ({handleClick, onRemoveNote, note}) => {
         </button>
       </div>
       <div
-        className={'color-picker-container' + (isShowColor ? ' show' : ' hide')}
+        className={
+          'color-picker-container' + (isShowColor ? ' show-color-btn' : ' hide')
+        }
       >
-        <div
-          className="color-box"
-          onClick={(ev) => {
-            ev.stopPropagation()
-            changeNoteColor()
-          }}
-        ></div>
+        {getColors().map(({name, color}) => {
+          return (
+            <div
+              className={'color-box bclr-' + name}
+              onClick={(ev) => {
+                ev.stopPropagation()
+                changeNoteColor(color)
+              }}
+              key={color}
+            ></div>
+          )
+        })}
       </div>
     </div>
   )

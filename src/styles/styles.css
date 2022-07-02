@@ -9,5 +9,6 @@
 @import './components/app-header.css';
 @import './components/app-footer.css';
 @import './components/note-preview.css';
+@import './components/note-list.css';
 @import './components/modal.css';
 @import './components/edit-note.css';

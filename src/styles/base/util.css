@@ -192,6 +192,10 @@ img {
 .show{
   display: block;
 }
+
+.show-color-btn{
+  display: flex;
+}
 /** links**/
 .link {
   color: var(--gray-900);
