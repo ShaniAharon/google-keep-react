@@ -175,6 +175,23 @@ img {
   transform: translate(-50%, -50%);
 }
 
+/* visibility */
+
+.vis{
+  visibility: visible;
+}
+
+.not-vis{
+  visibility: hidden;
+}
+
+.hide{
+  display: none;
+}
+
+.show{
+  display: block;
+}
 /** links**/
 .link {
   color: var(--gray-900);

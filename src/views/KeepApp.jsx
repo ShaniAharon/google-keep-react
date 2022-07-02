@@ -21,7 +21,7 @@ export const KeepApp = () => {
 
   if (!notes) return <div>Loading...</div>
   return (
-    <section className="map-app-container container  container-clean">
+    <section className="note-app-container container  container-clean">
       <Link to="/edit">Add Note</Link>
       {/* <NoteEdit /> */}
       <div>

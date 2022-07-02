@@ -44,8 +44,8 @@ export function setFilterBy(filterBy) {
     }
 }
 
-// export function getNoteById(noteId) {
-//     return async () => {
-//         return await noteService.getById(noteId)
-//     }
-// }
+export function getNoteById(noteId) {
+    return async () => {
+        return await noteService.getById(noteId)
+    }
+}

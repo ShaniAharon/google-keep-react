@@ -9,18 +9,12 @@
   box-shadow: 8px 7px 14px 0px rgba(0,0,0,0.75);
 }
 
-.hide{
-  display: none;
-}
-
 .btn-save{
   margin-top: 10px;
  margin-left: 65px;
 }
 
-.show{
-  display: block;
-}
+
 
 .modal-form{
 
