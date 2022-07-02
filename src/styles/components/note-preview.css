@@ -17,7 +17,8 @@
   width: 240px;
   background-color: #fff;
   border: 1px #e0e0e0 solid;
-
+  height: 278px;
+    /* line-height: 278px; */
 }
 
 .main-note-container{

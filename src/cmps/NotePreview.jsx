@@ -79,6 +79,7 @@ export const NotePreview = ({handleClick, onRemoveNote, note}) => {
         className={
           'color-picker-container' + (isShowColor ? ' show-color-btn' : ' hide')
         }
+        onClick={(ev) => ev.stopPropagation()}
       >
         {getColors().map(({name, color}) => {
           return (
