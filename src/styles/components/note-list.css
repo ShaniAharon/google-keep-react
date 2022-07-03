@@ -2,6 +2,18 @@
 .note-list h2{
   margin-bottom: 15px;
 }
+
+.note-list{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+/* .note-list{
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+} */
 /* grid-responsive-masonry */
 .masonry {
   columns: 2;

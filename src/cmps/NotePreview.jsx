@@ -58,22 +58,30 @@ export const NotePreview = ({handleClick, onRemoveNote, note}) => {
       </div>
 
       <div className={'btn-container' + (isShow ? ' vis' : ' not-vis')}>
-        <button
+        <i
           onClick={(ev) => {
             ev.stopPropagation()
             onRemoveNote(note._id)
           }}
-        >
-          Delete
-        </button>
-        <button
+          class="fa-solid fa-circle-minus minus"
+        ></i>
+
+        <div
+          onClick={(ev) => {
+            ev.stopPropagation()
+            showColorPalate()
+          }}
+          className="palette"
+        ></div>
+
+        {/* <button
           onClick={(ev) => {
             ev.stopPropagation()
             showColorPalate()
           }}
         >
           Colors
-        </button>
+        </button> */}
       </div>
       <div
         className={

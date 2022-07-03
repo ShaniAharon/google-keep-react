@@ -10,9 +10,8 @@ export const NoteList = ({notes, onRemoveNote}) => {
 
   if (!notes) return <div>Loading...</div>
   return (
-    <div className="note-list ">
-      <h2 className="text-center u">Notes</h2>
-      <ul className="clean-list masonry ">
+    <div className=" ">
+      <ul className="clean-list note-list  ">
         {notes.map((note) => (
           <NotePreview
             onRemoveNote={onRemoveNote}
